@@ -74,11 +74,19 @@ function displayBook(book){
         const card = removeButton.closest(".card")
         card.remove()
     })
+    let yesRead = 'Yes'
+    let noRead = 'No'
 
     bookName.innerHTML = `Book Name: "${book.name}"`
     authorName.innerHTML = `Author Name: "${book.author}"`
     pages.innerHTML = `${book.pages} pages`
-    isRead.innerHTML = book.read
+
+    if (book.read = 'true'){
+        book.read == yesRead
+    } else if (book.read == 'false'){
+        book.read = noRead
+    }
+    isRead.innerHTML = `Read: ${book.read}`
     removeButton.innerText = "Remove"
 
     card.classList.add("card")
@@ -98,7 +106,7 @@ submitButton.forEach(button => {
         let bookName = document.getElementById("name").value
         let author = document.getElementById("author").value
         let pages = document.getElementById("pages").value
-        let read = document.getElementById("read").value
+        let read = document.getElementById("read").checked
 
         addBookToLibrary(bookName, author, pages, read)
         for (let i = 0; i < myLibrary.length; i++){
