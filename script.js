@@ -75,9 +75,9 @@ function displayBook(book){
         card.remove()
     })
 
-    bookName.innerHTML = book.name
-    authorName.innerHTML = book.author
-    pages.innerHTML = book.pages
+    bookName.innerHTML = `Book Name: "${book.name}"`
+    authorName.innerHTML = `Author Name: "${book.author}"`
+    pages.innerHTML = `${book.pages} pages`
     isRead.innerHTML = book.read
     removeButton.innerText = "Remove"
 
@@ -86,6 +86,11 @@ function displayBook(book){
     cards.appendChild(card)
     card.append(bookName, authorName, pages, isRead, removeButton)
 }
+
+
+let count = 0;
+
+//submit button
 submitButton.forEach(button => {
     button.addEventListener('click', () => {
         const form = document.querySelector(".form-popup")
@@ -96,7 +101,15 @@ submitButton.forEach(button => {
         let read = document.getElementById("read").value
 
         addBookToLibrary(bookName, author, pages, read)
-        displayBook(myLibrary[0])
+        for (let i = 0; i < myLibrary.length; i++){
+            if (count == i) {
+                displayBook(myLibrary[i])
+            } else {
+                continue
+            }
+            count++;
+        }
+        //displayBook(myLibrary[0])
         closeFormPopup(form)
 
     })
