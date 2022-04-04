@@ -88,10 +88,10 @@ body{
 
 .submit-button, .close-button{
     outline: none;
-    border: 3px solid #1d4ed8;
+    border: none;
     border-radius: 10px;
-    background-color: #0f172a;
-    color: #1d4ed8;
+    background-color: #1d4ed8;
+    color: #0f172a;
     height: 50px;
     width: 125px;
     font-weight: 700;
@@ -99,10 +99,17 @@ body{
     cursor: pointer;
 }
 
-.submit-button:hover, .close-button:hover{
-    background-color: rgba( 0, 0, 0, 0.5);
+.close-button{
+    background-color: #ef4444;
 }
 
+.submit-button:hover{
+    background-color: rgba(29, 78, 216, 0.5)
+}
+
+.close-button:hover{
+    background-color: rgba(239, 68, 68, 0.5)
+}
 .form-popup.active{
     transform: translate(-50%, -50%) scale(1);
 }
