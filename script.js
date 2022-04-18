@@ -127,6 +127,7 @@ removeButton.forEach(button => {
     button.addEventListener('click', () => {
         const card = button.closest(".card")
         card.remove()
+        myLibrary.slice(0, myLibrary.length)
     })
 })
 
