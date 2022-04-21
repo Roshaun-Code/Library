@@ -46,14 +46,29 @@ let myLibrary = [];
 
 
 //Object contructer for a book
-function Book(name, author, pages, read){
-    this.name = name
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function() {
-        console.log(`${this.name} ${this.author} ${this.pages} ${this.read}`)
+// function Book(name, author, pages, read){
+//     this.name = name
+//     this.author = author
+//     this.pages = pages
+//     this.read = read
+//     this.info = function() {
+//         console.log(`${this.name} ${this.author} ${this.pages} ${this.read}`)
+//     }
+// }
+
+//Using Classes instead of a normal function
+class Book{
+    constructor(name, author, pages, read){
+        this.name = name
+        this.author = author
+        this.pages = pages
+        this.read = read
     }
+
+    info() {
+        return `${this.name} ${this.author} ${this.pages} ${this.read}`
+    }
+    
 }
 
 //Function alls for the object to be pushed in the array
